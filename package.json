@@ -2,9 +2,9 @@
 	"name": "scoreboard",
 	"version": "1.0.0",
 	"private": true,
-	"dependencies": 
-	{
-		"express": "~4.17.1",
-		"ejs": "~3.0.1"
+	"dependencies": {
+		"bootstrap": "^4.4.1",
+		"ejs": "~3.0.1",
+		"express": "~4.17.1"
 	}
 }

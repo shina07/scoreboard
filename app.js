@@ -15,10 +15,13 @@ app.engine('html', require('ejs').renderFile);
 // Routing Module
 var indexRouter = require('./routes/index');
 var testRouter = require('./routes/test');
+var loginRouter = require('./routes/login');
 
-app.use('/', indexRouter)
-app.use('/test', testRouter)
+app.use('/', indexRouter);
+app.use('/test', testRouter);
+app.use('/login', loginRouter);
 
+app.use(express.static(path.join(__dirname, '/public')));
 
 // Create Server
 // var server = http.createServer(app);
