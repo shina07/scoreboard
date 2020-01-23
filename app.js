@@ -3,24 +3,23 @@ var express = require('express');
 // var http = require('http');
 var path = require('path');
 
+var favicon = require('serve-favicon')
+var indexRouter = require('./routes/index');
+var loginRouter = require('./routes/login');
+var testRouter = require('./routes/test');
+
 var app = express();
 
 // All environment
 app.set('port', process.env.PORT || 5000);
 app.set('views', path.join(__dirname, '/views'));
-// To use html
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
-// Routing Module
-var indexRouter = require('./routes/index');
-var testRouter = require('./routes/test');
-var loginRouter = require('./routes/login');
-
+app.use(favicon(path.join(__dirname, 'public/image', 'favicon.ico')))
 app.use('/', indexRouter);
 app.use('/test', testRouter);
 app.use('/login', loginRouter);
-
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Create Server
