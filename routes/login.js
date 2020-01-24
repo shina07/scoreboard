@@ -10,8 +10,8 @@ router.use(function timeLog(req, res, next) {
 });
 
 router.get('/', function(req, res) {
-	res.sendFile(path.join(viewpath + 'login.html'));
-	// res.render('index.ejs');
+	res.render(path.join(viewpath + 'login.pug'));
+	// res.sendFile(path.join(viewpath + 'login.html'))
 });
 
 module.exports = router;
