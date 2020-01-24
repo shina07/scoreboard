@@ -2,13 +2,16 @@ doctype html
 html
 	head
 		include ../core/head.pug
-		// Custom styles for this template
-		block headcontent
+		// Custom styles
+		block head
 
 	body
 		include ../core/header.pug
 
-		block bodycontent
+		block content
 
 		include ../core/footer.pug
 		include ../core/script.pug
+
+		// Custom scripts
+		block script
