@@ -1,10 +1,23 @@
-extends ../core/layout.pug
-block head
-	link(href='/index/index.css' rel='stylesheet')
+doctype html
+html
+	head
+		include ../core/head.pug
+		link(href='/index/index.css' rel='stylesheet')
 
-block content
-	main.container(role='main')
-		.starter-template
-			h1 ThatSoo Company, Inc
-			p.lead 뭐 할지 생각해 봅시다.
-
+	body.text-center
+		.cover-container.d-flex.w-100.h-100.p-3.mx-auto.flex-column
+			header.masthead.mb-auto
+				.inner
+					h3.masthead-brand ThatSoo
+					nav.nav.nav-masthead.justify-content-center
+						a.nav-link.active(href='/home') Home
+						a.nav-link(href='#') Features
+						a.nav-link(href='#') Contact
+			main.inner.cover(role='main')
+				img.mb-4(src='/image/logo-round-bg-white.png' alt='' width='96' height='96')
+				p.lead
+					| 한탕주의, 인생은 한 방.
+				p.lead
+					| 그 한 방을 위한 개짓거리.
+				
+			include ../core/centerfooter.pug

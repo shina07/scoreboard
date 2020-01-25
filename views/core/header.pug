@@ -1,13 +1,13 @@
 header.container
-	nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
-		//- span.navbar-toggler-icon
-		a.navbar-brand(href='/') 댓수 홈
+	nav.navbar.navbar-expand-md.navbar-dark.fixed-top
+		a.navbar-brand(href='/home') 댓수 홈
 		button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation')
+			span.navbar-toggler-icon
 		
 		#navbarsExampleDefault.collapse.navbar-collapse
 			ul.navbar-nav.mr-auto
 				li.nav-item.active
-					a.nav-link(href='/introduction')
+					a.nav-link(href='/home/introduction')
 						| 기업소개
 					span.sr-only (current)
 				li.nav-item

@@ -4,10 +4,12 @@ var express = require('express');
 var path = require('path');
 
 var favicon = require('serve-favicon')
-var indexRouter = require('./routes/index');
-var loginRouter = require('./routes/login');
-var rankingRouter = require('./routes/ranking');
-var testRouter = require('./routes/test');
+// All Routers
+var index = require('./routes/index');
+var home = require('./routes/home')
+var login = require('./routes/login');
+var ranking = require('./routes/ranking');
+var test = require('./routes/test');
 
 var app = express();
 
@@ -17,10 +19,11 @@ app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'pug');
 
 app.use(favicon(path.join(__dirname, 'public/image', 'favicon.ico')))
-app.use('/', indexRouter);
-app.use('/login', loginRouter);
-app.use('/ranking', rankingRouter);
-app.use('/test', testRouter);
+app.use('/', index);
+app.use('/home', home)
+app.use('/login', login);
+app.use('/ranking', ranking);
+app.use('/test', test);
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Create Server (Node 3.x and under)

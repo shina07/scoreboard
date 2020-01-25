@@ -2,6 +2,9 @@ doctype html
 html.h-100
 	head
 		include ../core/head.pug
+		// Some pages do not inherit layout.pug
+		link(href='/core/layout.css' rel='stylesheet')
+
 		// Custom styles
 		block head
 
