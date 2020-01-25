@@ -20,6 +20,13 @@ header.container
 						a.dropdown-item(href='#') Action
 						a.dropdown-item(href='#') Another action
 						a.dropdown-item(href='#') Something else here
+			#navbar7.navbar-collapse.collapse.justify-content-stretch
+				ul.navbar-nav.ml-auto
+					li.nav-item.nav-item-login
+						a.nav-link(href='/login') 로그인
+
 			form.form-inline.my-2.my-lg-0
 				input.form-control.mr-sm-2(type='text' placeholder='Search' aria-label='Search')
-				button.btn.btn-secondary.my-2.my-sm-0(type='submit') Search
+				.input-group-append
+					button.btn.btn-secondary.my-2.my-sm-0(type='submit')
+						i.fa.fa-search
