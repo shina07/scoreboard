@@ -1,0 +1,64 @@
+doctype html
+html
+	head
+		include ../core/head.pug
+
+		// Custom styles for this template
+		link(href='/login/signup.css' rel='stylesheet')
+
+	body
+		.container
+			.py-3.text-center
+				a(href='/')
+					img.d-block.mx-auto.mb-4(src='/image/logo-round-bg-dark.svg' alt='' width='96' height='96')
+			.row
+				form.needs-validation(novalidate='', action='/login/signup', method='POST')
+					.mb-3
+						label(for='user_id') ID
+						input#user-id.form-control(type='text' name='user_id' placeholder='ID를 입력하세요' required='')
+						.invalid-feedback(style='width: 100%;')
+							| Your ID is required.
+					.mb-3
+						label(for='password') Password
+						input#password.form-control(type='password' name='password' placeholder='8글자 이상의 대, 소문자, 특수문자를 조합해주세요' required='')
+						.invalid-feedback(style='width: 100%;')
+							| Your password is required.
+					.mb-3
+						label Verify Password
+						input#password-verify.form-control(type='password' name='password_verify' placeholder='8글자 이상의 대, 소문자, 특수문자를 조합해주세요' required='')
+						.invalid-feedback(style='width: 100%;')
+							| Your password is required.
+					.row
+						.col-md-6.mb-3.col-name
+							label(for='last_name') Last name
+							input#last-name.form-control(type='text' name='last_name' placeholder='성' value='' required='')
+							.invalid-feedback
+								| Valid last name is required.
+						.col-md-6.mb-3.col-name
+							label(for='first_name') First name
+							input#first-name.form-control(type='text' name='first_name' placeholder='이름' value='' required='')
+							.invalid-feedback
+								| Valid first name is required.
+					.mb-3
+						label(for='user_name') Username
+						.input-group
+							.input-group-prepend
+								span.input-group-text
+									i.fa.fa-user-circle
+							input#user-name.form-control(type='text' name='user_name' placeholder='화면에 표시될 이름을 입력하세요' required='')
+							.invalid-feedback(style='width: 100%;')
+								| Your username is required.
+					.mb-3
+						label(for='email') Email 
+						input#email.form-control(type='email' name='email' placeholder='you@example.com' required='')
+						.invalid-feedback
+							| Please enter a valid email address for shipping updates.
+					
+					hr.mb-4
+					button.btn.btn-dark.btn-lg.btn-block(type='submit') Sign Up
+			
+			include ../core/centerfooter.pug
+
+		include ../core/script.pug
+		script(src='/login/signup.js')
+

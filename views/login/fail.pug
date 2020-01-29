@@ -1,0 +1,19 @@
+doctype html
+html
+	head
+		include ../core/head.pug
+
+		// Custom styles for this template
+		link(href='/login/fail.css' rel='stylesheet')
+
+	body.text-center
+		.container
+			a(href='/')
+				img.mb-4(src='/image/logo-round-bg-dark.png' alt='' width='96' height='96')
+			h1.h3.mb-3.font-weight-normal Sign up Failed...
+			p 댓수 팀의 일원이시라면 프로그래머를 찾아주세요...
+
+			button.btn.btn-lg.btn-dark.btn-block(onclick='location.href="/"') Return to Home
+
+			include ../core/centerfooter.pug
+			

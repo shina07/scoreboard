@@ -1,0 +1,19 @@
+doctype html
+html
+	head
+		include ../core/head.pug
+
+		// Custom styles for this template
+		link(href='/login/success.css' rel='stylesheet')
+
+	body.text-center
+		.container
+			a(href='/')
+				img.mb-4(src='/image/logo-round-bg-dark.png' alt='' width='96' height='96')
+			h1.h3.mb-3.font-weight-normal Successfully signed up
+
+			button.btn.btn-lg.btn-secondary.btn-block(onclick='location.href="/login"') Go to Login Page
+			button.btn.btn-lg.btn-dark.btn-block(onclick='location.href="/"') Return to Home
+
+			include ../core/centerfooter.pug
+			
