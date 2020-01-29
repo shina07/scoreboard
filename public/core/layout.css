@@ -13,6 +13,10 @@ body {
 	background-color: #222222;
 }
 
+.nav-item-login {
+	padding-right: 10px;
+}
+
 main.container {
 	padding: 60px 15px 0;
 }

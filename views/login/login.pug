@@ -5,9 +5,11 @@ html
 
 		// Custom styles for this template
 		link(href='/login/login.css' rel='stylesheet')
+
 	body.text-center
 		form.form-signin
-			img.mb-4(src='/image/logo-round-bg-dark.png' alt='' width='96' height='96')
+			a(href='/')
+				img.mb-4(src='/image/logo-round-bg-dark.png' alt='' width='96' height='96')
 			h1.h3.mb-3.font-weight-normal Please sign in
 			label.sr-only(for='inputEmail') ID
 			input#inputEmail.form-control(type='email' placeholder='ID' required='' autofocus='')
@@ -19,4 +21,7 @@ html
 					|  Remember me
 
 			button.btn.btn-lg.btn-secondary.btn-block(type='submit') Sign in
-			p.mt-5.mb-3.text-muted &copy; 2015-2020
+			button.btn.btn-lg.btn-dark.btn-block(onclick='location.href="/login/signup"') Sign up
+
+			include ../core/centerfooter.pug
+			
