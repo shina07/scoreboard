@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-var dbmanager = require('../dbmanager');
+var db_connection = require('../db_connection');
 var viewpath = path.join(__dirname + '/../views/login/')
 
 var router = express.Router();
@@ -41,7 +41,7 @@ router.post('/signup', function(req, res) {
 		req.body.email
 	];
 
-	var query = dbmanager.query("CALL insert_user(?, ?, ?, ?, ?, ?)", user, function (error, results, fields) {
+	var query = db_connection.query("CALL insert_user(?, ?, ?, ?, ?, ?)", user, function (error, results, fields) {
 		if (error) {
 			console.log(__filename, "ERROR OCURRED. Error: \n", error);
 			res.render(path.join(viewpath + 'fail.pug'));
