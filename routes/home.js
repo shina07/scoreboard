@@ -13,8 +13,20 @@ router.get('/', function(req, res) {
 	res.render(path.join(viewpath, 'home.pug'));
 });
 
+router.get('/about', function(req, res) {
+	res.render(path.join(viewpath, 'about.pug'));
+});
+
 router.get('/introduction', function(req, res) {
 	res.render(path.join(viewpath, 'introduction.pug'));
+});
+
+router.get('/privacy', function(req, res) {
+	res.render(path.join(viewpath, 'privacy.pug'));
+});
+
+router.get('/terms', function(req, res) {
+	res.render(path.join(viewpath, 'terms.pug'));
 });
 
 module.exports = router;
