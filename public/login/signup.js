@@ -185,12 +185,35 @@
 	function validateUserID (object) {
 
 		var inputValue = object.val();
+		var regex = /^[a-zA-z0-9]{4,20}/;
 
-		if(inputValue.length >= 4) {
-			$(object).addClass('is-valid');
-		} else {
+		if (regex.test(inputValue) == false) {
 			$(object).addClass('is-invalid');
-		};
+
+			var invalidFeedback = $('.user-id-feedback');
+			invalidFeedback.text("ID가 올바르지 않습니다. 4글자 이상, 20글자 이내이며, 대, 소문자와 숫자만 가능합니다.");
+
+		} else {
+			$.ajax({
+				url: '/login/select/userid',
+				type: 'post',
+				data: {
+					'user_id' : inputValue
+				},
+				success: function (res) {
+					if (res === true) {
+						// User exists
+						$(object).addClass('is-invalid');
+
+						var invalidFeedback = $('.user-id-feedback');
+						invalidFeedback.text("이미 존재하는 ID입니다. ");
+
+					} else {
+						$(object).addClass('is-valid');
+					}
+				}
+			});
+		}
 	};
 
 	function validateUserName (object) {
@@ -202,10 +225,28 @@
 			$(object).addClass('is-invalid');
 
 			var invalidFeedback = $('.user-name-feedback');
-			invalidFeedback.text("화면표기용 이름이 올바르지 않습니다. 4글자 이상, 20글자 이내이며, 알파벳 대, 소문자, 숫자, 한글만 가능합니다.");
+			invalidFeedback.text("사용자 이름이 올바르지 않습니다. 4글자 이상, 20글자 이내이며, 알파벳 대, 소문자, 숫자, 한글만 가능합니다.");
 
 		} else {
-			$(object).addClass('is-valid');
+			$.ajax({
+				url: '/login/select/username',
+				type: 'post',
+				data: {
+					'user_name' : inputValue
+				},
+				success: function (res) {
+					if (res === true) {
+						// User exists
+						$(object).addClass('is-invalid');
+
+						var invalidFeedback = $('.user-name-feedback');
+						invalidFeedback.text("이미 존재하는 사용자 이름입니다. ");
+
+					} else {
+						$(object).addClass('is-valid');
+					}
+				}
+			});
 		}
 	};
 
