@@ -12,47 +12,49 @@ html
 				a(href='/')
 					img.d-block.mx-auto.mb-4(src='/image/logo-round-bg-dark.svg' alt='' width='96' height='96')
 			.row
-				form.needs-validation(novalidate='', action='/login/signup', method='POST')
+				form#signup-form.needs-validation(action='/login/signup', method='POST')
 					.mb-3
 						label(for='user_id') ID
-						input#user-id.form-control(type='text' name='user_id' placeholder='ID를 입력하세요' required='')
-						.invalid-feedback(style='width: 100%;')
-							| Your ID is required.
+						input#user-id.form-control(type='text' name='user_id' placeholder='ID를 입력하세요' required)
+						.valid-feedback(style='width: 100%;')
+							| 사용 가능한 아이디입니다.
+						.invalid-feedback.user-id-feedback(style='width: 100%;')
+							| Default Invalid Feedback
 					.mb-3
 						label(for='password') Password
-						input#password.form-control(type='password' name='password' placeholder='8글자 이상의 대, 소문자, 특수문자를 조합해주세요' required='')
-						.invalid-feedback(style='width: 100%;')
-							| Your password is required.
+						input#password.form-control(type='password' name='password' placeholder='8자 이상, 대, 소문자, 숫자, 특수문자를 1개 이상 조합하세요' required)
+						.invalid-feedback.password-feedback(style='width: 100%;')
+							| Default Invalid Feedback
 					.mb-3
-						label Verify Password
-						input#password-verify.form-control(type='password' name='password_verify' placeholder='8글자 이상의 대, 소문자, 특수문자를 조합해주세요' required='')
-						.invalid-feedback(style='width: 100%;')
-							| Your password is required.
+						label Confirm Password
+						input#password-confirm.form-control(type='password' name='password_confirm' placeholder='비밀번호를 한 번 더 입력하세요' required)
+						.invalid-feedback.password-confirm-feedback(style='width: 100%;')
+							| Default Invalid Feedback
 					.row
 						.col-md-6.mb-3.col-name
 							label(for='last_name') Last name
-							input#last-name.form-control(type='text' name='last_name' placeholder='성' value='' required='')
-							.invalid-feedback
-								| Valid last name is required.
+							input#last-name.form-control(type='text' name='last_name' placeholder='성' value='' required)
+							.invalid-feedback.last-name-feedback
+								| Default Invalid Feedback
 						.col-md-6.mb-3.col-name
 							label(for='first_name') First name
-							input#first-name.form-control(type='text' name='first_name' placeholder='이름' value='' required='')
-							.invalid-feedback
-								| Valid first name is required.
+							input#first-name.form-control(type='text' name='first_name' placeholder='이름' value='' required)
+							.invalid-feedback.first-name-feedback
+								| Default Invalid Feedback
 					.mb-3
 						label(for='user_name') Username
 						.input-group
 							.input-group-prepend
 								span.input-group-text
 									i.fa.fa-user-circle
-							input#user-name.form-control(type='text' name='user_name' placeholder='화면에 표시될 이름을 입력하세요' required='')
-							.invalid-feedback(style='width: 100%;')
-								| Your username is required.
+							input#user-name.form-control(type='text' name='user_name' placeholder='화면에 표시될 이름을 입력하세요 (4 - 20자)' required)
+							.invalid-feedback.user-name-feedback(style='width: 100%;')
+								| Default Invalid Feedback
 					.mb-3
 						label(for='email') Email 
-						input#email.form-control(type='email' name='email' placeholder='you@example.com' required='')
-						.invalid-feedback
-							| Please enter a valid email address for shipping updates.
+						input#email.form-control(type='email' name='email' placeholder='you@example.com' required)
+						.invalid-feedback.email-feedback
+							| Default Invalid Feedback
 					
 					hr.mb-4
 					button.btn.btn-dark.btn-lg.btn-block(type='submit') Sign Up
