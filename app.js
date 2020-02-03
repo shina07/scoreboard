@@ -8,6 +8,7 @@ var session = require('express-session');
 
 // All Routers
 var index = require('./routes/index');
+var food = require('./routes/food');
 var home = require('./routes/home')
 var login = require('./routes/login');
 var ranking = require('./routes/ranking');
@@ -29,6 +30,7 @@ app.use(session({	resave: true,
 					secret: 'secret' }));
 
 app.use('/', index);
+app.use('/food', food);
 app.use('/home', home)
 app.use('/login', login);
 app.use('/ranking', ranking);

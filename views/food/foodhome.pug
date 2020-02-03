@@ -1,0 +1,17 @@
+doctype html
+html
+	head
+		include ../core/head.pug
+		link(href='/food/foodhome.css' rel='stylesheet')
+		link(href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet")
+
+	body.text-center
+		form.form-search
+			h1.logo ThatSoo
+			.input-group
+				input#inputSearch.form-control.rounded-pill(type='text' placeholder='Search' required='' autofocus='' aria-label='Search')
+				.input-group-prepended
+					button.input-button.btn-dark.rounded-circle(type='submit')
+						i.fa.fa-search
+			
+			include ../core/centerfooter.pug
