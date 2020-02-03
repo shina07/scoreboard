@@ -14,7 +14,7 @@
 - mysql
 
 ###### Coding Convention
-- npm-coding-style ([Link](https://docs.npmjs.com/misc/coding-style.html]))
+- npm-coding-style ([Link](https://docs.npmjs.com/misc/coding-style.html))
 
 ## Core App
 

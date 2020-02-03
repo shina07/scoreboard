@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+
 var dbConnection = require('../db-connection');
 var viewPath = path.join(__dirname, '..', 'views', 'login')
 
