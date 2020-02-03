@@ -1,13 +1,13 @@
 var mysql = require('mysql2');
-var db_config = require('./config.json').db_config;
+var dbConfig = require('./app-config.json').dbConfig;
 
 // MySQL Connection Setting
 var connection = mysql.createConnection({
-	host: db_config.host,
-	port: db_config.port,
-	user: db_config.user,
-	password: db_config.password,
-	database: db_config.database
+	host: dbConfig.host,
+	port: dbConfig.port,
+	user: dbConfig.user,
+	password: dbConfig.password,
+	database: dbConfig.database
 });
 
 connection.connect(function(error) {

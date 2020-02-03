@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 
 var router = express.Router();
-var viewpath = path.join(__dirname + '/../views/ranking/')
+var viewPath = path.join(__dirname, '..', 'views', 'ranking')
 
 router.use(function timeLog(req, res, next) {
 	console.log('Time: ', Date.now(), __filename);
@@ -10,8 +10,7 @@ router.use(function timeLog(req, res, next) {
 });
 
 router.get('/', function(req, res) {
-	res.render(path.join(viewpath + 'ranking.pug'));
-	// res.render('index.ejs');
+	res.render(path.join(viewPath, 'ranking.pug'));
 });
 
 module.exports = router;
