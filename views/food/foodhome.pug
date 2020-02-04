@@ -6,10 +6,10 @@ html
 		link(href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet")
 
 	body.text-center
-		form.form-search
+		form.form-search(action='/food/gallery', method='GET')
 			h1.logo ThatSoo
 			.input-group
-				input#inputSearch.form-control.rounded-pill(type='text' placeholder='Search' required='' autofocus='' aria-label='Search')
+				input#inputSearch.form-control.rounded-pill(type='text' name='search_query' placeholder='Search' required='' autofocus='' aria-label='Search')
 				.input-group-prepended
 					button.input-button.btn-dark.rounded-circle(type='submit')
 						i.fa.fa-search
