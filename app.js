@@ -1,10 +1,11 @@
 // Modules
 // var http = require('http');
 var express = require('express');
-var path = require('path');
-
 var favicon = require('serve-favicon');
+var path = require('path');
 var session = require('express-session');
+
+var models = require("./database/models/index.js");
 
 // All Routers
 var index = require('./routes/index');
@@ -35,6 +36,13 @@ app.use('/home', home)
 app.use('/login', login);
 app.use('/ranking', ranking);
 app.use('/test', test);
+
+// Test DB Connection only. Do not create table with sync().
+models.sequelize.sync().then( () => {
+	console.log("DB Connection Successful");
+}).catch( err => {
+	console.log("DB Connection Failed... ERROR: \n", err);
+});
 
 // Create server instance
 // var server = http.createServer(app);

@@ -48,6 +48,8 @@ html
 								span.input-group-text
 									i.fa.fa-user-circle
 							input#user-name.form-control(type='text' name='user_name' placeholder='화면에 표시될 이름을 입력하세요 (4 - 20자)' required)
+							.valid-feedback(style='width: 100%;')
+								| 사용 가능한 사용자 이름입니다.
 							.invalid-feedback.user-name-feedback(style='width: 100%;')
 								| Default Invalid Feedback
 					.mb-3
