@@ -1,20 +1,20 @@
 doctype html
 html.h-100
 	head
-		include ../core/head.pug
+		include ../base/head.pug
 		// Some pages do not inherit layout.pug
-		link(href='/core/layout.css' rel='stylesheet')
+		link(href='/base/layout.css' rel='stylesheet')
 
 		// Custom styles
 		block head
 
 	body.d-flex.flex-column.h-100
-		include ../core/header.pug
+		include ../base/header.pug
 
 		block content
 
-		include ../core/footer.pug
-		include ../core/script.pug
+		include ../base/footer.pug
+		include ../base/script.pug
 
 		// Custom scripts
 		block script
